@@ -17,7 +17,9 @@ package com.workingflows.js.jscore.client.factory;
 
 import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.Function;
-import com.workingflows.js.jscore.client.api.Promise;
+import com.workingflows.js.jscore.client.api.JSON;
+import com.workingflows.js.jscore.client.api.promise.Promise;
+import com.workingflows.js.jscore.client.api.promise.PromiseFn;
 
 /**
  * Utility class for access to JS Native Objects.
@@ -91,6 +93,20 @@ public class JS {
         fn.f(changes);
      }
      }-*/;
+    
+    /**
+     * Create a native function with GWT Function how parameter.
+     * 
+     * @param fn
+     * @return 
+     */
+    public static native PromiseFn Function(PromiseFn fn) /*-{
+     return function(resolve, rejected){
+        fn.f(resolve, rejected);
+     }
+     }-*/;
+
+   
 
     /**
      * Interface JsObject
@@ -125,18 +141,5 @@ public class JS {
      */
     @JsType(isNative = true, prototype = "Array")
     public interface Array extends JsObject{
-
-        
-    }
-
-    /**
-     * Interface JSON
-     */
-    @JsType(isNative = true, prototype = "JSON")
-    public interface JSON {
-
-        String stringify(JsObject obj);
-
-        JsObject parse(String json);
     }
 }

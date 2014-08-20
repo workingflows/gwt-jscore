@@ -16,8 +16,11 @@
 package com.workingflows.js.jscore.client.factory;
 
 import com.workingflows.js.jscore.client.api.Array;
-import com.workingflows.js.jscore.client.api.JSON;
+import com.workingflows.js.jscore.client.api.JsObject;
 import com.workingflows.js.jscore.client.api.Window;
+import com.workingflows.js.jscore.client.api.promise.Promise;
+import com.workingflows.js.jscore.client.api.promise.PromiseFn;
+
 
 /**
  * Fatories for low level creation.
@@ -31,32 +34,42 @@ import com.workingflows.js.jscore.client.api.Window;
 public class Browser {
 
     /**
-     * Create a native JS Array.
+     * Create a native JS Promise.
+     *
+     * @param onPromise
+     * @return
+     */
+    public static native Promise newPromise(PromiseFn onPromise)/*-{
+     return new $wnd.Promise(onPromise);
+     }-*/;
+
+    /**
+     * Create a native JS Promise.
      *
      * @return
      */
-    public static native Array createArray() /*-{
+    public static native Array newArray() /*-{
      return new Array();
+     }-*/;
+    
+    /**
+     * Create a native JS Object.
+     *
+     * @return
+     */
+    public static native JsObject newObject() /*-{
+     return {};
      }-*/;
 
     /**
      * Create a JSON native Object
-     * @return 
-     */
-    public static native JSON createJSON() /*-{
-     return JSON;
-     }-*/;
-    
-    /**
-     * Create a JSON native Object
-     * @return 
+     *
+     * @return
      */
     public static native Window getWindow() /*-{
      return $wnd;
      }-*/;
     
-    public void pepe(){
-        
-    }
+    
 
 }
