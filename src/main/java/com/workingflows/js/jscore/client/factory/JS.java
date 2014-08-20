@@ -17,6 +17,7 @@ package com.workingflows.js.jscore.client.factory;
 
 import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.Function;
+import com.workingflows.js.jscore.client.api.Promise;
 
 /**
  * Utility class for access to JS Native Objects.
@@ -109,7 +110,13 @@ public class JS {
     @JsType(isNative = true, prototype = "Promise")
     public interface StaticPromise {
 
+        Promise resolve(Object obj);
         
+        Promise reject(Object obj);
+        
+        Promise all(Object... objs);
+        
+        Promise race(Object... iterable);
 
     }
 

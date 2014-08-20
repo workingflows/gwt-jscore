@@ -12,7 +12,8 @@ import com.google.gwt.core.client.js.JsType;
 /**
  * Utility class for access to JS Native Objects.
  * 
- * 
+ * TODO make a especial Function for Promise.onFulfilled
+ * TODO make a especial Function for Promise.onRejected
  *
  * @author Cristian Rinaldi <a
  * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
@@ -23,5 +24,7 @@ import com.google.gwt.core.client.js.JsType;
 public interface Promise {
     
     void then(Function f);
+    
+    void cath(Function f);
     
 }
