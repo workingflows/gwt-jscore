@@ -39,7 +39,7 @@ public class Browser {
      * @param onPromise
      * @return
      */
-    public static native Promise newPromise(PromiseFn onPromise)/*-{
+     public static native Promise newPromise(PromiseFn onPromise)/*-{
      return new $wnd.Promise(onPromise);
      }-*/;
 

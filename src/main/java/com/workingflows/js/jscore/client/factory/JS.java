@@ -46,6 +46,7 @@ public class JS {
         Object = createNativeObject();
         Array = createNativeArray();
         JSON = createNativeJSON();
+        Promise = createNativePromise();
     }
 
     /**
@@ -105,8 +106,6 @@ public class JS {
         fn.f(resolve, rejected);
      }
      }-*/;
-
-   
 
     /**
      * Interface JsObject
