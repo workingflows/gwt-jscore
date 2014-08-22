@@ -3,29 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.workingflows.js.jscore.client.api.promise;
 
-import com.google.gwt.core.client.js.JsType;
+import com.google.gwt.core.client.JavaScriptObject;
 
 /**
- * 
+ * Implemented with JsType
  *
  * @author Cristian Rinaldi <a
  * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType
-public class Resolve {
+public class Resolve extends JavaScriptObject implements ResolveFn {
+
     
-    public void resolve(Object... objs){
-        internalResolve(this, objs);
-    }
+    protected Resolve(){};
     
-    public static native void internalResolve(Object ref, Object... objs)/*-{
-            console.log(objs);
-            console.log(ref);
-        return ref(objs);
-    }-*/;
+    @Override
+    public final native void resolve(Object objs) /*-{
+     this(objs);
+     }-*/;
 }

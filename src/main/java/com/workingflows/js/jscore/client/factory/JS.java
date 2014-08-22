@@ -46,6 +46,7 @@ public class JS {
         Object = createNativeObject();
         Array = createNativeArray();
         JSON = createNativeJSON();
+        Promise = createNativePromise();
     }
 
     /**
@@ -102,7 +103,9 @@ public class JS {
      */
     public static native PromiseFn Function(PromiseFn fn) /*-{
      return function(resolve, rejected){
+        console.log("Call resolve, rejected");
         fn.f(resolve, rejected);
+        console.log("Post resolve, rejected");
      }
      }-*/;
 
