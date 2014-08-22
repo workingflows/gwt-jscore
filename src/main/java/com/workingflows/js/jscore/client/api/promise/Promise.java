@@ -6,7 +6,6 @@
 
 package com.workingflows.js.jscore.client.api.promise;
 
-import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.Function;
 
@@ -25,10 +24,8 @@ import com.workingflows.js.jscore.client.api.Function;
 @JsType(isNative = true, prototype = "Promise")
 public interface Promise {
     
-    Promise then(Function... f);
+    void then(Function f);
     
-    //TODO this es a error definition
-    @JsProperty(value = "catch")
     void cath(Function f);
     
 }
