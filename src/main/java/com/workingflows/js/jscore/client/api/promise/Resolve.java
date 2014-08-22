@@ -17,11 +17,10 @@ import com.google.gwt.core.client.JavaScriptObject;
  */
 public class Resolve extends JavaScriptObject implements ResolveFn {
 
-    
     protected Resolve(){};
     
     @Override
     public final native void resolve(Object objs) /*-{
      this(objs);
-     }-*/;
+    }-*/;
 }

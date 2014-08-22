@@ -27,9 +27,9 @@ import com.google.gwt.core.client.js.JsType;
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
 @JsType
-public interface Function {
+public interface Function<T, E> {
     
-    void f(Object... changed );
+    E f(T changed );
 
 }
 

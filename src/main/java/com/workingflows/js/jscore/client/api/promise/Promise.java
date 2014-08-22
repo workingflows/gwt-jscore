@@ -7,14 +7,11 @@
 package com.workingflows.js.jscore.client.api.promise;
 
 import com.google.gwt.core.client.js.JsType;
-import com.workingflows.js.jscore.client.api.Function;
 
 
 /**
- * Utility class for access to JS Native Objects.
+ * Represent a Native Promise Object.
  * 
- * TODO make a especial Function for Promise.onFulfilled
- * TODO make a especial Function for Promise.onRejected
  *
  * @author Cristian Rinaldi <a
  * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
@@ -23,5 +20,7 @@ import com.workingflows.js.jscore.client.api.Function;
  */
 @JsType(isNative = true, prototype = "Promise")
 public interface Promise {
-    Promise then(Function f, Function error);
+    
+    Promise then(PromiseThenFn f, PromiseThenFn error);
+    
 }

@@ -9,14 +9,10 @@ package com.workingflows.js.jscore.client.api.promise;
 import com.google.gwt.core.client.js.JsType;
 
 /**
- * 
  *
- * @author Cristian Rinaldi <a
- * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
- * @author Andres Testi <a
- * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
+ * @author scit
  */
 @JsType
-public interface ResolveFn {
-    void resolve(Object objs);
+public interface PromiseThenFn {
+    Promise f(Object obj);
 }
