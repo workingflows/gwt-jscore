@@ -6,7 +6,6 @@
 package com.workingflows.js.jscore.client.api.promise;
 
 import com.google.gwt.core.client.JavaScriptObject;
-import com.workingflows.js.jscore.client.factory.Browser;
 
 /**
  * Implemented with {@link JavaScriptObject}.
@@ -16,18 +15,14 @@ import com.workingflows.js.jscore.client.factory.Browser;
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-public final class Rejected extends JavaScriptObject {
+public final class Rejected extends JavaScriptObject implements RejectedFn{
 
     protected Rejected() {
     }
 
-    public void rejected(Object obj) {
-        Browser.getWindow().getConsole().log(obj);
-        call(obj);
-    }
-
-    protected final native void call(Object objs)/*-{
+    @Override
+    public final native void rejected(Object objs)/*-{
      this(objs);
-     }-*/;
+    }-*/;
 
 }

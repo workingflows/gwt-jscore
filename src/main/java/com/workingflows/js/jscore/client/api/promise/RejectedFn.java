@@ -14,5 +14,5 @@ package com.workingflows.js.jscore.client.api.promise;
  */
 public interface RejectedFn {
 
-    void rejected(Object... objs);
+    void rejected(Object objs);
 }
