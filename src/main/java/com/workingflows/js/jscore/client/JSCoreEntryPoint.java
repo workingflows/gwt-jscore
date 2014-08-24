@@ -1,4 +1,4 @@
-    /*
+/*
  * Copyright 2014 Cristian Rinaldi & Andres Testi.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,6 +30,7 @@ public class JSCoreEntryPoint implements EntryPoint {
 
     @Override
     public void onModuleLoad() {
+        //TODO load polyfills
     }
 
 }
