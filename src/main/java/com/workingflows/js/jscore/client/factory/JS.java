@@ -119,14 +119,9 @@ public class JS {
      */
     public static native PromiseFn Function(PromiseFn fn) /*-{
      return function(resolve, rejected){
-     console.log("Call resolve, rejected");
      fn.f(resolve, rejected);
-     console.log("Post resolve, rejected");
      }
      }-*/;
-
-
-
 
     /**
      * Interface JsObject Represent a accesor for "static" method in JS
