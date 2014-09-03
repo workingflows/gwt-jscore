@@ -16,6 +16,7 @@
 
 package com.workingflows.js.jscore.client.api;
 
+import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 
 /**
@@ -30,5 +31,8 @@ import com.google.gwt.core.client.js.JsType;
 public interface Array {
     
     void push(Object obj);
+    
+    @JsProperty
+    int length();
     
 }
