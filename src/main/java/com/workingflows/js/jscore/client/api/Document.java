@@ -13,28 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.workingflows.js.jscore.client.api;
 
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
+import com.workingflows.js.jscore.client.api.html.HTMLBodyElement;
+import com.workingflows.js.jscore.client.api.html.HTMLElement;
 
 /**
- * Native JS Array 
+ * Represent a Document
  *
  * @author Cristian Rinaldi <a
  * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType(isNative = true, prototype = "Array")
-public interface Array{
-    
-    void push(Object obj);
+@JsType(isNative = true, prototype = "Document")
+public interface Document {
+
+    public HTMLElement createElement(String div);
+
+    public HTMLElement getElementsByTagName(String body);
     
     @JsProperty
-    int length();
-    
-    Object pop();
-    
+    public HTMLBodyElement getBody();
+
 }

@@ -16,6 +16,7 @@
 package com.workingflows.js.jscore.client.factory;
 
 import com.workingflows.js.jscore.client.api.Array;
+import com.workingflows.js.jscore.client.api.Document;
 import com.workingflows.js.jscore.client.api.JsObject;
 import com.workingflows.js.jscore.client.api.Window;
 import com.workingflows.js.jscore.client.api.promise.Promise;
@@ -68,6 +69,10 @@ public class Browser {
      */
     public static native Window getWindow() /*-{
      return $wnd;
+     }-*/;
+    
+    public static native Document getDocument() /*-{
+     return $doc;
      }-*/;
     
     

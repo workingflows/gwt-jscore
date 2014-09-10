@@ -18,6 +18,7 @@ package com.workingflows.js.jscore.client.factory;
 import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.Function;
 import com.workingflows.js.jscore.client.api.JSON;
+import com.workingflows.js.jscore.client.api.core.EventListener;
 import com.workingflows.js.jscore.client.api.promise.Promise;
 import com.workingflows.js.jscore.client.api.promise.PromiseFn;
 import com.workingflows.js.jscore.client.api.promise.PromiseThenFn;
@@ -92,20 +93,26 @@ public class JS {
      * @param fn
      * @return
      */
-     public static native PromiseThenFn Function(PromiseThenFn fn) /*-{
+    public static native PromiseThenFn Function(PromiseThenFn fn) /*-{
      return function(changes){
-        var p = fn.f(changes);
-        return p;
+     var p = fn.f(changes);
+     return p;
      }
      }-*/;
-    
+
+    public static native EventListener createEventListener(EventListener listener)/*-{
+     return function(evt){
+     listener.onEvent(evt);
+     }
+     }-*/;
+
     /**
      * Create a native function with GWT Function how parameter.
      *
      * @param fn
      * @return
      */
-     public static native Function<?,?> Function(Function<?,?> fn) /*-{
+    public static native Function<?, ?> Function(Function<?, ?> fn) /*-{
      return function(changes){
      fn.f(changes);
      }
