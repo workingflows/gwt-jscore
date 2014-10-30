@@ -12,7 +12,7 @@ import com.google.gwt.core.client.js.JsType;
  *
  * @author iron
  */
-@JsType(isNative = true, prototype = "HTMLFormElement")
+@JsType(prototype = "HTMLFormElement")
 public interface HTMLFormElement extends HTMLElement {
 
     void submit();

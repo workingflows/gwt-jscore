@@ -14,6 +14,5 @@ import com.workingflows.js.jscore.client.api.JsObject;
  */
 @JsType(prototype = "Node")
 public interface Node extends EventTarget {
-
-    void bind(String property, JsObject... objects);
+    void bind(String property, JsObject objects);
 }

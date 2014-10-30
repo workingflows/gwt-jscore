@@ -27,7 +27,7 @@ import com.google.gwt.core.client.js.JsType;
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType(isNative = true, prototype = "Array")
+@JsType(prototype = "Array")
 public interface Array{
     
     void push(Object obj);

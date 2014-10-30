@@ -33,7 +33,6 @@ import com.workingflows.js.jscore.client.api.promise.PromiseThenFn;
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType
 public class JS {
 
     public static JsObject Object;
@@ -154,13 +153,12 @@ public class JS {
         Promise all(Object... objs);
 
         Promise race(Object... iterable);
-
     }
 
     /**
      * Interface Array
      */
-    @JsType(isNative = true, prototype = "Array")
+    @JsType(prototype = "Array")
     public interface Array extends JsObject {
     }
 }

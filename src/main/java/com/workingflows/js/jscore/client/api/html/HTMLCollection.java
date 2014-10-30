@@ -5,12 +5,14 @@
  */
 package com.workingflows.js.jscore.client.api.html;
 
+import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.core.Node;
 
 /**
  *
  * @author iron
  */
+@JsType
 public interface HTMLCollection {
     /**
      *  This attribute specifies the length or  size of the list.
