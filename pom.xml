@@ -98,9 +98,12 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
-        <repository>
-            <id>nexus-codehouse-snapshots</id>
-            <name>Nexus Codehouse</name>
+    </repositories>
+    
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus-codehouse</id>
+            <name>Nexus Codehouse snapshots</name>
             <url>https://nexus.codehaus.org/content/repositories/snapshots/</url>
             <releases>
                 <enabled>false</enabled>
@@ -108,8 +111,6 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
-        </repository>
-        
-        
-    </repositories>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
