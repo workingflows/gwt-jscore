@@ -29,7 +29,7 @@ import com.google.gwt.core.client.js.JsType;
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType(isNative = true, prototype = "Promise")
+@JsType(prototype = "Promise")
 public interface Promise {
     
     Promise then(PromiseThenFn f, PromiseThenFn error);

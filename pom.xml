@@ -10,16 +10,18 @@
     <name>jscore</name>
     
     <properties>
-        <gwt.version>2.7.0-SNAPSHOT</gwt.version>
+        <gwt.version>2.7.0-rc1</gwt.version>
+        <gwt.plugin.version>2.7.0-beta1</gwt.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>com.google.gwt</groupId>
-                <artifactId>gwt-user</artifactId>
+                <artifactId>gwt</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
                 <version>${gwt.version}</version>
             </dependency>
         </dependencies>
@@ -29,7 +31,7 @@
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-user</artifactId>
-            <scope>provided</scope>
+            <version>${gwt.version}</version>
         </dependency>
     </dependencies>
 
@@ -59,10 +61,11 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
-                <version>${gwt.version}</version>
+                <version>${gwt.plugin.version}</version>
                 <configuration>
                     <gen>${basedir}/gen</gen>
                     <jsInteropMode>JS</jsInteropMode>
+                    <incremental>true</incremental>
                 </configuration>
                 <executions>
                     <execution>
@@ -76,26 +79,31 @@
     </build>
     
     <repositories>
-        <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+         <repository>
+            <id>sonatype-google-releases</id>
+            <name>Sonatype Google Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/google-releases</url>
             <releases>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
             </releases>
             <snapshots>
                 <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
             </snapshots>
+            
         </repository>
         <repository>
             <id>sonatype-google-snapshots</id>
             <name>Sonatype Google Snapshots</name>
             <url>https://oss.sonatype.org/content/repositories/google-snapshots</url>
             <releases>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
             </releases>
             <snapshots>
                 <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
             </snapshots>
         </repository>
     </repositories>
@@ -106,11 +114,13 @@
             <name>Nexus Codehouse snapshots</name>
             <url>https://nexus.codehaus.org/content/repositories/snapshots/</url>
             <releases>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </releases>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
+    
+    
 </project>

@@ -17,6 +17,7 @@ package com.workingflows.js.jscore.client.api;
 
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
+import com.workingflows.js.jscore.client.api.core.NodeList;
 import com.workingflows.js.jscore.client.api.html.HTMLBodyElement;
 import com.workingflows.js.jscore.client.api.html.HTMLElement;
 
@@ -28,7 +29,7 @@ import com.workingflows.js.jscore.client.api.html.HTMLElement;
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType(isNative = true, prototype = "Document")
+@JsType(prototype = "Document")
 public interface Document {
 
     public HTMLElement createElement(String div);
@@ -37,5 +38,9 @@ public interface Document {
     
     @JsProperty
     public HTMLBodyElement getBody();
+    
+    public NodeList querySelector(String selector);
+    
+    public NodeList querySelectorAll(String selector);
 
 }
