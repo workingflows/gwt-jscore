@@ -2,4 +2,9 @@
 <module>
     <inherits name='com.google.gwt.user.User' />
     <source path='client' />
+
+    <set-property name="user.agent" value="safari" />
+    
+    <entry-point class="com.workingflows.js.jscore.client.JSCoreEntryPoint"></entry-point>
+    
 </module>
