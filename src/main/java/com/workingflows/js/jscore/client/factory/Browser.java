@@ -22,7 +22,6 @@ import com.workingflows.js.jscore.client.api.Window;
 import com.workingflows.js.jscore.client.api.promise.Promise;
 import com.workingflows.js.jscore.client.api.promise.PromiseFn;
 
-
 /**
  * Fatories for low level creation.
  *
@@ -37,22 +36,12 @@ public class Browser {
     /**
      * Create a native JS Promise.
      *
-     * @param onPromise
-     * @return
-     */
-    public static native Promise newPromise(PromiseFn onPromise)/*-{
-     return new $wnd.Promise(onPromise);
-     }-*/;
-
-    /**
-     * Create a native JS Promise.
-     *
      * @return
      */
     public static native Array newArray() /*-{
      return new Array();
      }-*/;
-    
+
     /**
      * Create a native JS Object.
      *
@@ -70,11 +59,9 @@ public class Browser {
     public static native Window getWindow() /*-{
      return $wnd;
      }-*/;
-    
+
     public static native Document getDocument() /*-{
      return $doc;
      }-*/;
-    
-    
 
 }

@@ -41,13 +41,10 @@ public class JS {
 
     public static JSON JSON;
 
-    public static StaticPromise Promise;
-
     static {
         Object = createNativeObject();
         Array = createNativeArray();
         JSON = createNativeJSON();
-        Promise = createNativePromise();
     }
 
     /**
@@ -57,15 +54,6 @@ public class JS {
      */
     public static native JsObject createNativeObject()/*-{
      return $wnd.Object;
-     }-*/;
-
-    /**
-     * Create a Native Promise
-     *
-     * @return
-     */
-    public static native StaticPromise createNativePromise()/*-{
-     return $wnd.Promise;
      }-*/;
 
     /**
@@ -132,27 +120,11 @@ public class JS {
     /**
      * Interface JsObject Represent a accesor for "static" method in JS
      */
-    @JsType(isNative = true, prototype = "Object")
+    @JsType(prototype = "Object")
     public interface JsObject {
 
         void observe(Object model, Function fn);
 
-    }
-
-    /**
-     * Interface StaticPromise Represent a accesor for "static" method in
-     * Promise Object
-     */
-    @JsType(isNative = true, prototype = "Promise")
-    public interface StaticPromise {
-
-        Promise resolve(Object obj);
-
-        Promise reject(Object obj);
-
-        Promise all(Object... objs);
-
-        Promise race(Object... iterable);
     }
 
     /**
