@@ -5,6 +5,7 @@
  */
 package com.workingflows.js.jscore.client.api.core;
 
+import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.JsObject;
 
@@ -17,10 +18,13 @@ public interface Node extends EventTarget {
 
     void bind(String property, JsObject objects);
 
+    @JsProperty
     Element parentElement();
 
+    @JsProperty
     Node parentNode();
 
+    @JsProperty
     Node firstChild();
 
     Node removeChild(Node child);
