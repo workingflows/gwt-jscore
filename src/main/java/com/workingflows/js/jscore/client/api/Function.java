@@ -19,7 +19,7 @@ import com.google.gwt.core.client.js.JsType;
 
 /**
  * Represent a Function in JS Enviroment.
- * 
+ *
  *
  * @author Cristian Rinaldi <a
  * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
@@ -30,9 +30,26 @@ import com.google.gwt.core.client.js.JsType;
  */
 @JsType
 public interface Function<T, E> {
+
+    E f(T changed);
+
+    /**
+     * Factory for Promise creation
+     */
     
-    E f(T changed );
+    public static class Static {
+
+        /**
+         * Create a native wrapper function with GWT Function how parameter.
+         * This is for now, when SAM will be implemented this disapear.
+         * @param fn
+         * @return
+         */
+        public static native Function<?, ?> newInstance(Function<?, ?> fn) /*-{
+            return function(changes){
+                fn.f(changes);
+            }
+        }-*/;
+    }
 
 }
-
-

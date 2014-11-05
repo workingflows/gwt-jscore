@@ -16,4 +16,17 @@ import com.workingflows.js.jscore.client.api.JsObject;
 public interface EventListener<E extends JsObject> {
 
     void onEvent(E event);
+
+    /**
+     * Factory for EventListener creation
+     */
+    public static class Static {
+
+        public static native EventListener newInstance(EventListener listener)/*-{
+            return function(evt){
+                listener.onEvent(evt);
+            }
+        }-*/;
+    }
+
 }

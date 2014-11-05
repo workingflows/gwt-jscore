@@ -28,4 +28,23 @@ import com.google.gwt.core.client.js.JsType;
 @JsType(prototype = "Object")
 public interface JsObject {
     
+    /**
+     * Static class for creation and definition
+     */
+    public static class Static {
+        
+        @JsType(prototype = "Object")
+        public interface StaticObject {
+            void observe(Object model, Function fn);
+        }
+
+        public static native JsObject newInstance() /*-{
+         return new $wnd.Object();
+         }-*/;
+        
+        public static native StaticObject get() /*-{
+         return new $wnd.Object;
+         }-*/;
+    }
+    
 }

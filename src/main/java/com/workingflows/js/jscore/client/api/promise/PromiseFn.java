@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.workingflows.js.jscore.client.api.promise;
 
 import com.google.gwt.core.client.js.JsType;
 
 /**
- * 
+ *
  *
  * @author Cristian Rinaldi <a
  * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
@@ -28,7 +27,19 @@ import com.google.gwt.core.client.js.JsType;
  */
 @JsType
 public interface PromiseFn {
-    
+
     void f(Resolve resolve, Rejected rejected);
-    
+
+    /**
+     * Factory for Promise Function creation
+     */
+    public static class Static {
+
+        public static native PromiseFn newInstance(PromiseFn fn) /*-{
+            return function(resolve, rejected){
+                fn.f(resolve, rejected);
+            }
+        }-*/;
+    }
+
 }

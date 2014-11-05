@@ -35,12 +35,18 @@ public interface Document {
     public HTMLElement createElement(String div);
 
     public HTMLElement getElementsByTagName(String body);
-    
+
     @JsProperty
     public HTMLBodyElement getBody();
-    
+
     public NodeList querySelector(String selector);
-    
+
     public NodeList querySelectorAll(String selector);
+
+    public static class Static {
+        public static native Document get() /*-{
+            return $doc;
+        }-*/;
+    }
 
 }

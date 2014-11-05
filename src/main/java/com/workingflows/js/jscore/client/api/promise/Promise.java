@@ -13,16 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
 package com.workingflows.js.jscore.client.api.promise;
 
 import com.google.gwt.core.client.js.JsType;
 
-
 /**
  * Represent a Native Promise Object.
- * 
+ *
  *
  * @author Cristian Rinaldi <a
  * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
@@ -31,7 +28,36 @@ import com.google.gwt.core.client.js.JsType;
  */
 @JsType(prototype = "Promise")
 public interface Promise {
-    
+
     Promise then(PromiseThenFn f, PromiseThenFn error);
-    
+
+    /**
+     * Factory for Promise creation
+     */
+    public static class Static {
+        /**
+         * Only for now, this will part of Static interface in JsType definition
+         */
+        @JsType(prototype = "Promise")
+        public interface StaticPromise {
+
+            Promise resolve(Object obj);
+
+            Promise reject(Object obj);
+
+            Promise all(Object... objs);
+
+            Promise race(Object... iterable);
+
+        }
+
+        public static native Promise create(PromiseFn onPromise) /*-{
+         return new $wnd.Promise(onPromise);
+         }-*/;
+        
+        public static native StaticPromise get() /*-{
+         return $wnd.Promise;
+         }-*/;
+    }
+
 }
