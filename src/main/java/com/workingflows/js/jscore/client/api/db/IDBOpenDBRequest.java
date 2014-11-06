@@ -13,26 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package com.workingflows.js.jscore.client.api;
-
-import com.google.gwt.core.client.js.JsProperty;
-import com.google.gwt.core.client.js.JsType;
+package com.workingflows.js.jscore.client.api.db;
 
 /**
- * Native JS Console 
+ * Native JS IDBOpenDBRequest 
  *
  * @author Cristian Rinaldi <a
  * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
- * @author Andres Testi <a
- * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType(prototype = "Console")
-public interface Console {
-    
-    @JsProperty
-    MemoryInfo getMemory();
-    
-    void log(Object ... obj);
+public interface IDBOpenDBRequest {
     
 }

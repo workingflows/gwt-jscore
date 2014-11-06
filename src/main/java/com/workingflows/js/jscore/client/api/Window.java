@@ -15,8 +15,10 @@
  */
 package com.workingflows.js.jscore.client.api;
 
+import com.workingflows.js.jscore.client.api.db.IDBOpenDBRequest;
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
+import com.workingflows.js.jscore.client.api.db.IDBEnvironment;
 
 /**
  * Native JS Window
@@ -26,12 +28,15 @@ import com.google.gwt.core.client.js.JsType;
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType(prototype = "Window")
-public interface Window {
+@JsType(prototype = "window")
+public interface Window extends IDBEnvironment{
 
     @JsProperty
     Console getConsole();
-
+    
+    @JsProperty
+    Document document();
+    
     /**
      * Factory for Window creation
      */
