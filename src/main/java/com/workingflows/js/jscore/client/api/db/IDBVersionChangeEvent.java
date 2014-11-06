@@ -7,13 +7,20 @@ package com.workingflows.js.jscore.client.api.db;
 
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
+import com.workingflows.js.jscore.client.api.core.Event;
 
 /**
  *
- * @author Cristian Rinaldi <csrinaldi@gmail.com>
+ * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
  */
+
 @JsType
-public interface IDBEnvironment {
+public interface IDBVersionChangeEvent<T extends IDBOpenDBRequest> extends Event<T>{
+    
     @JsProperty
-    IDBFactory indexedDB();
+    long oldVersion();
+    
+    @JsProperty
+    long newVersion();
+    
 }

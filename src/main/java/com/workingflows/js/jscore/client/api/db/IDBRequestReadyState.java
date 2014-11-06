@@ -5,15 +5,10 @@
  */
 package com.workingflows.js.jscore.client.api.db;
 
-import com.google.gwt.core.client.js.JsProperty;
-import com.google.gwt.core.client.js.JsType;
-
 /**
  *
- * @author Cristian Rinaldi <csrinaldi@gmail.com>
+ * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
  */
-@JsType
-public interface IDBEnvironment {
-    @JsProperty
-    IDBFactory indexedDB();
+public interface IDBRequestReadyState {
+    
 }

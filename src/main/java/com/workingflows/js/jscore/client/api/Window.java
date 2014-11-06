@@ -43,7 +43,7 @@ public interface Window extends IDBEnvironment{
     public static class Static {
         public static native Window get() /*-{
          return $wnd;
-         }-*/;
+        }-*/;
     }
 
 }

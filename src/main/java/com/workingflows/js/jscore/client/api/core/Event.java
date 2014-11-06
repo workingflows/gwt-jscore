@@ -3,17 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.workingflows.js.jscore.client.api.db;
+package com.workingflows.js.jscore.client.api.core;
 
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 
 /**
  *
- * @author Cristian Rinaldi <csrinaldi@gmail.com>
+ * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
  */
 @JsType
-public interface IDBEnvironment {
+public interface Event<T> {
+    
     @JsProperty
-    IDBFactory indexedDB();
+    T target();
+    
 }
