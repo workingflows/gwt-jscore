@@ -3,21 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.workingflows.js.jscore.client.api.db;
+package com.workingflows.js.jscore.client.api.core;
 
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
-import com.workingflows.js.jscore.client.api.Function;
 
 /**
  *
  * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
- * @param <T>
  */
-@JsType
-public interface IDBOpenDBRequest extends IDBRequest<IDBDatabase>{
+@JsType(prototype = "DOMError")
+public interface DOMError {
 
     @JsProperty
-    void onupgradeneeded(Function fn);
-    
+    String name();
+
 }

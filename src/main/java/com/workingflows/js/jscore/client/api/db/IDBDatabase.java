@@ -9,35 +9,37 @@ import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.Function;
 import com.workingflows.js.jscore.client.api.JsObject;
-import com.workingflows.js.jscore.client.api.core.DOMError;
 
 /**
  *
  * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
  */
 @JsType
-public interface IDBRequest<T> {
-    
-    @JsProperty
-    public void onsuccess(Function fn);
-    
-    @JsProperty
-    public JsObject source();
-    
-    @JsProperty
-    public DOMError error();
-    
-    @JsProperty
-    public void onerror(Function fn);
+public interface IDBDatabase {
 
-    //TODO see IDBRequestReadyState
     @JsProperty
-    public JsObject readyState();
-    
+    String name();
+
     @JsProperty
-    public T result();
-    
+    long version();
+
     @JsProperty
-    IDBTransaction transaction();
+    String[] objectStoreNames();
+
+    @JsProperty
+    void onabort(Function f);
+
+    @JsProperty
+    void onerror(Function f);
+
+    @JsProperty
+    void onversionchange(Function f);
+
+    void close();
+
+    IDBObjectStore createObjectStore(String objStore, JsObject parametes);
+
+    void deleteObjectStore(String objStore);
     
+    IDBTransaction transaction(String[] objStores, String mode);
 }

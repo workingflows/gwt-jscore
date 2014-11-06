@@ -5,19 +5,14 @@
  */
 package com.workingflows.js.jscore.client.api.db;
 
-import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
-import com.workingflows.js.jscore.client.api.Function;
 
 /**
  *
  * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
- * @param <T>
  */
-@JsType
-public interface IDBOpenDBRequest extends IDBRequest<IDBDatabase>{
 
-    @JsProperty
-    void onupgradeneeded(Function fn);
+@JsType
+public interface IDBTransactionMode {
     
 }

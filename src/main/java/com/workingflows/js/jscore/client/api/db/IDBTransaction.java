@@ -8,36 +8,39 @@ package com.workingflows.js.jscore.client.api.db;
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.Function;
-import com.workingflows.js.jscore.client.api.JsObject;
 import com.workingflows.js.jscore.client.api.core.DOMError;
+import com.workingflows.js.jscore.client.api.core.EventTarget;
 
 /**
  *
  * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
  */
 @JsType
-public interface IDBRequest<T> {
-    
-    @JsProperty
-    public void onsuccess(Function fn);
-    
-    @JsProperty
-    public JsObject source();
-    
-    @JsProperty
-    public DOMError error();
-    
-    @JsProperty
-    public void onerror(Function fn);
+public interface IDBTransaction extends EventTarget {
 
-    //TODO see IDBRequestReadyState
-    @JsProperty
-    public JsObject readyState();
+    public static String READ = "read";
+    public static String WRITE = "write";
+    public static String READWRITE = "readwrite";
     
     @JsProperty
-    public T result();
-    
+    IDBDatabase db();
+
     @JsProperty
-    IDBTransaction transaction();
+    DOMError error();
+
+    @JsProperty
+    IDBTransactionMode mode();
+
+    @JsProperty
+    void onabort(Function fn);
+
+    @JsProperty
+    void oncomplete(Function fn);
+
+    @JsProperty
+    void onerror(Function fn);
     
+    void abort();
+
+    IDBObjectStore objectStore(String name);
 }
