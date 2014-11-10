@@ -14,7 +14,7 @@ import com.google.gwt.core.client.js.JsType;
 @JsType(prototype = "IDBFactory")
 public interface IDBFactory {
 
-    public IDBOpenDBRequest open(String name, long version);
+    public IDBOpenDBRequest open(String name, int version);
 
     public IDBOpenDBRequest deleteDatabase(String name);
 

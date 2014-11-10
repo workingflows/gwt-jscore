@@ -15,6 +15,7 @@
  */
 package com.workingflows.js.jscore.client.api;
 
+import com.workingflows.js.jscore.client.api.html.StyleSheetList;
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.core.NodeList;
@@ -42,6 +43,9 @@ public interface Document {
     public NodeList querySelector(String selector);
 
     public NodeList querySelectorAll(String selector);
+    
+    @JsProperty
+    public StyleSheetList styleSheets();
 
     public static class Static {
         public static native Document get() /*-{

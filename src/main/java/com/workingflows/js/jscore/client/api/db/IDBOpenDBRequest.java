@@ -18,6 +18,6 @@ import com.workingflows.js.jscore.client.api.Function;
 public interface IDBOpenDBRequest extends IDBRequest<IDBDatabase>{
 
     @JsProperty
-    void onupgradeneeded(Function fn);
+    void onupgradeneeded(Function<IDBVersionChangeEvent<IDBOpenDBRequest>, Void> fn);
     
 }

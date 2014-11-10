@@ -15,7 +15,6 @@
  */
 package com.workingflows.js.jscore.client.api;
 
-import com.workingflows.js.jscore.client.api.db.IDBOpenDBRequest;
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.db.IDBEnvironment;

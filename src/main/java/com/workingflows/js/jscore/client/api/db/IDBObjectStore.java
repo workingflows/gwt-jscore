@@ -6,7 +6,7 @@
 package com.workingflows.js.jscore.client.api.db;
 
 import com.google.gwt.core.client.js.JsType;
-import com.workingflows.js.jscore.client.api.JsObject;
+import com.google.gwt.json.client.JSONObject;
 
 /**
  *
@@ -15,8 +15,8 @@ import com.workingflows.js.jscore.client.api.JsObject;
 @JsType
 public interface IDBObjectStore {
     
-    Object createIndex(String name, String path, JsObject options);
+    Object createIndex(String name, String path, JSONObject options);
     
-    IDBRequest add(JsObject obj);
+    IDBRequest add(JSONObject obj);
     
 }
