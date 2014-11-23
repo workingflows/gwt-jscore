@@ -14,6 +14,8 @@ import com.google.gwt.core.client.js.JsType;
  */
 @JsType
 public interface IDBEnvironment {
+    
     @JsProperty
     IDBFactory indexedDB();
+    
 }

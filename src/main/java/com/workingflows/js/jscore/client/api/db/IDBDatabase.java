@@ -9,7 +9,6 @@ import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 import com.google.gwt.json.client.JSONObject;
 import com.workingflows.js.jscore.client.api.Function;
-import com.workingflows.js.jscore.client.api.JsObject;
 
 /**
  *
@@ -38,7 +37,7 @@ public interface IDBDatabase {
 
     void close();
 
-    IDBObjectStore createObjectStore(String objStore, JSONObject parametes);
+    IDBObjectStore createObjectStore(String objStore, Object parametes);
 
     void deleteObjectStore(String objStore);
     

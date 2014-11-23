@@ -5,6 +5,7 @@
  */
 package com.workingflows.js.jscore.client.api.db;
 
+import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 import com.google.gwt.json.client.JSONObject;
 
@@ -17,6 +18,11 @@ public interface IDBObjectStore {
     
     Object createIndex(String name, String path, JSONObject options);
     
-    IDBRequest add(JSONObject obj);
+    IDBRequest add(JSONObject obj, String id);
+    
+    IDBRequest put(JSONObject obj);
+    
+    @JsProperty
+    String keyPath();
     
 }
