@@ -20,7 +20,9 @@ public interface IDBObjectStore {
     
     IDBRequest add(JSONObject obj, String id);
     
-    IDBRequest put(JSONObject obj);
+    IDBRequest put(JSONObject obj, String id);
+    
+    IDBRequest get(String id);
     
     @JsProperty
     String keyPath();
