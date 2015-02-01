@@ -40,7 +40,7 @@ public interface Document {
     @JsProperty
     public HTMLBodyElement getBody();
 
-    public NodeList querySelector(String selector);
+    public HTMLElement querySelector(String selector);
 
     public NodeList querySelectorAll(String selector);
     
