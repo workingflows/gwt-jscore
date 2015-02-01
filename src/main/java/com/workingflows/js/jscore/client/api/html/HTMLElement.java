@@ -21,6 +21,8 @@ public interface HTMLElement extends Element {
     public void setAttribute(String align, String center);
 
     public void appendChild(HTMLElement element);
+    
+    public void removeChild(HTMLElement element);
 
     public void addEventListener(String event, EventListener<? extends JsObject> handler);
 
