@@ -18,13 +18,13 @@ public interface Node extends EventTarget {
 
     void bind(String property, JsObject objects);
 
-    @JsProperty
+    //@JsProperty
     Element parentElement();
 
-    @JsProperty
+    //@JsProperty
     Node parentNode();
 
-    @JsProperty
+    //@JsProperty
     Node firstChild();
 
     Node removeChild(Node child);

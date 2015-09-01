@@ -17,26 +17,26 @@ import com.workingflows.js.jscore.client.api.core.Node;
 public interface StyleSheet {
     
     @JsProperty
-    boolean disabled();
+    boolean isDisabled();
     
     @JsProperty
-    void disabled(boolean disabled);
+    void setDisabled(boolean disabled);
     
     //TODO media
-    @JsProperty
+    //@JsProperty
     Node ownerNode();
     
-    @JsProperty
+    //@JsProperty
     StyleSheet parentStyleSheet();
     
     @JsProperty
-    String title();
+    String getTitle();
 
     @JsProperty
-    String type();
+    String getType();
     
     @JsProperty
-    String href();
+    String getHref();
     
     
 }

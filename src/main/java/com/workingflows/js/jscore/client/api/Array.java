@@ -31,7 +31,7 @@ public interface Array {
 
     void push(Object obj);
 
-    @JsProperty
+    //@JsProperty
     int length();
 
     Object pop();

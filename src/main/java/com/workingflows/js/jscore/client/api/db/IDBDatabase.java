@@ -17,22 +17,22 @@ import com.workingflows.js.jscore.client.api.Function;
 @JsType
 public interface IDBDatabase {
 
-    @JsProperty
+    //@JsProperty
     String name();
 
-    @JsProperty
+    //@JsProperty
     long version();
 
-    @JsProperty
+    //@JsProperty
     String[] objectStoreNames();
 
-    @JsProperty
+    //@JsProperty
     void onabort(Function f);
 
-    @JsProperty
+    //@JsProperty
     void onerror(Function f);
 
-    @JsProperty
+    //@JsProperty
     void onversionchange(Function f);
 
     void close();

@@ -17,10 +17,10 @@ import com.workingflows.js.jscore.client.api.core.Event;
 @JsType
 public interface IDBVersionChangeEvent<T extends IDBOpenDBRequest> extends Event<T>{
     
-    @JsProperty
+    //@JsProperty
     long oldVersion();
     
-    @JsProperty
+    //@JsProperty
     long newVersion();
     
 }

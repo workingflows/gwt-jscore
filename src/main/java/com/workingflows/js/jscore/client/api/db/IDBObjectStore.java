@@ -24,7 +24,7 @@ public interface IDBObjectStore {
     
     IDBRequest get(String id);
     
-    @JsProperty
+    //@JsProperty
     String keyPath();
     
 }

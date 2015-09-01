@@ -30,8 +30,10 @@ import com.google.gwt.core.client.js.JsFunction;
  */
 @JsFunction
 public interface Function<T, E> {
-
+    
     E call(T changed);
+
+    //E f(T changed);
 
     /**
      * Factory for Promise creation

@@ -44,7 +44,7 @@ public interface Document {
 
     public NodeList querySelectorAll(String selector);
     
-    @JsProperty
+    //@JsProperty
     public StyleSheetList styleSheets();
 
     public static class Static {

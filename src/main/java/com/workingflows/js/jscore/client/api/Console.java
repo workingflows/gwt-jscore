@@ -30,7 +30,7 @@ import com.google.gwt.core.client.js.JsType;
 @JsType(prototype = "Console")
 public interface Console {
     
-    @JsProperty
+    //@JsProperty
     MemoryInfo getMemory();
     
     void log(Object ... obj);
