@@ -15,7 +15,7 @@ import com.google.gwt.core.client.js.JsType;
 @JsType(prototype = "DOMError")
 public interface DOMError {
 
-    @JsProperty
+    //@JsProperty
     String name();
 
 }

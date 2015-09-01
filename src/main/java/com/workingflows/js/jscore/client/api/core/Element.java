@@ -14,7 +14,7 @@ import com.google.gwt.core.client.js.JsType;
 @JsType(prototype = "Element")
 public interface Element extends Node {
     
-    @JsProperty
+    //@JsProperty
     DOMTokenList classList();
 
 }

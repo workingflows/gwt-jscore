@@ -15,7 +15,7 @@ import com.google.gwt.core.client.js.JsType;
 @JsType
 public interface Event<T> {
     
-    @JsProperty
+    //@JsProperty
     T target();
     
 }

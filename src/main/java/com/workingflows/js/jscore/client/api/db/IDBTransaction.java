@@ -22,22 +22,22 @@ public interface IDBTransaction extends EventTarget {
     public static String WRITE = "write";
     public static String READWRITE = "readwrite";
     
-    @JsProperty
+    //@JsProperty
     IDBDatabase db();
 
-    @JsProperty
+    //@JsProperty
     DOMError error();
 
-    @JsProperty
+    //@JsProperty
     IDBTransactionMode mode();
 
-    @JsProperty
+    //@JsProperty
     void onabort(Function fn);
 
-    @JsProperty
+    //@JsProperty
     void oncomplete(Function fn);
 
-    @JsProperty
+    //@JsProperty
     void onerror(Function fn);
     
     void abort();

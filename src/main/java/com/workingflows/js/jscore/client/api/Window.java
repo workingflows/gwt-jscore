@@ -20,7 +20,7 @@ import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.db.IDBEnvironment;
 
 /**
- * Native JS Window
+ * Native JS window
  *
  * @author Cristian Rinaldi <a
  * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
@@ -33,12 +33,9 @@ public interface Window extends IDBEnvironment{
     @JsProperty
     Console getConsole();
     
-    @JsProperty
+    //@JsProperty
     Document document();
     
-    /**
-     * Factory for Window creation
-     */
     public static class Static {
         public static native Window get() /*-{
          return $wnd;

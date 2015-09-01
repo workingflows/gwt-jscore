@@ -18,7 +18,7 @@ public interface NodeList {
     /**
      * This attribute specifies the length or size of the list.
      */
-    @JsProperty
+    //@JsProperty
     public int length();
 
     /**

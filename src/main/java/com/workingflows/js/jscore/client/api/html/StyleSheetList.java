@@ -17,7 +17,7 @@ public interface StyleSheetList {
     
     StyleSheet item(int idx);
     
-    @JsProperty
+    //@JsProperty
     int length();
     
 }

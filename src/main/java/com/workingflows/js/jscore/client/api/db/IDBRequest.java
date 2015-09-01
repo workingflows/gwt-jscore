@@ -18,26 +18,26 @@ import com.workingflows.js.jscore.client.api.core.DOMError;
 @JsType
 public interface IDBRequest<T> {
     
-    @JsProperty
+    //@JsProperty
     public void onsuccess(Function fn);
     
-    @JsProperty
+    //@JsProperty
     public JsObject source();
     
-    @JsProperty
+    //@JsProperty
     public DOMError error();
     
-    @JsProperty
+    //@JsProperty
     public void onerror(Function fn);
 
     //TODO see IDBRequestReadyState
-    @JsProperty
+    //@JsProperty
     public JsObject readyState();
     
-    @JsProperty
+    //@JsProperty
     public T result();
     
-    @JsProperty
+    //@JsProperty
     IDBTransaction transaction();
     
 }

@@ -29,5 +29,11 @@ public interface HTMLElement extends Element {
 
     @JsProperty
     public void setInnerText(String text);
+    
+    @JsProperty
+    public String getInnerHTML();
+
+    @JsProperty
+    public String getInnerText();
 
 }
