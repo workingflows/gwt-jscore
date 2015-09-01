@@ -15,20 +15,32 @@ import com.workingflows.js.jscore.client.api.core.DOMError;
  *
  * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
  */
-@JsType
+@JsType(prototype = "IDBRequest")
 public interface IDBRequest<T> {
     
-    //@JsProperty
-    public void onsuccess(Function fn);
+    @JsProperty
+    public void setOnsuccess(Function fn);
     
-    //@JsProperty
-    public JsObject source();
+    @JsProperty
+    public Function getOnsuccess();
     
-    //@JsProperty
-    public DOMError error();
+    @JsProperty
+    public void setSource(JsObject object);
     
-    //@JsProperty
-    public void onerror(Function fn);
+    @JsProperty
+    public JsObject getSource();
+    
+    @JsProperty
+    public DOMError getError();
+    
+    @JsProperty
+    public void setError(DOMError dom);
+    
+    @JsProperty
+    public void setOnerror(Function fn);
+    
+    @JsProperty
+    public Function getOnerror();
 
     //TODO see IDBRequestReadyState
     //@JsProperty

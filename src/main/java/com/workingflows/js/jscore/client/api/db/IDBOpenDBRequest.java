@@ -5,7 +5,6 @@
  */
 package com.workingflows.js.jscore.client.api.db;
 
-import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.Function;
 
@@ -14,7 +13,7 @@ import com.workingflows.js.jscore.client.api.Function;
  * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
  * @param <T>
  */
-@JsType
+@JsType(prototype = "IDBOpenDBRequest")
 public interface IDBOpenDBRequest extends IDBRequest<IDBDatabase>{
 
     //@JsProperty
