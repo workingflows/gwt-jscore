@@ -15,7 +15,7 @@
  */
 package com.workingflows.js.jscore.client.api;
 
-import com.google.gwt.core.client.js.JsType;
+import com.google.gwt.core.client.js.JsFunction;
 
 /**
  * Represent a Function in JS Enviroment.
@@ -28,10 +28,10 @@ import com.google.gwt.core.client.js.JsType;
  * @param <T>
  * @param <E>
  */
-@JsType
+@JsFunction
 public interface Function<T, E> {
 
-    E f(T changed);
+    E call(T changed);
 
     /**
      * Factory for Promise creation
