@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.workingflows.js.jscore.client.api;
 
+import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 
 /**
- * Native JS Array 
+ * Native JS Array
  *
  * @author Cristian Rinaldi <a
  * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
@@ -28,7 +28,22 @@ import com.google.gwt.core.client.js.JsType;
  */
 @JsType(prototype = "Array")
 public interface Array {
-    
+
     void push(Object obj);
-    
+
+    @JsProperty
+    int length();
+
+    Object pop();
+
+    /**
+     * Factory for Array creation
+     */
+    public static class Static {
+
+        public static native Array newInstance() /*-{
+            return new Array();
+        }-*/;
+    }
+
 }

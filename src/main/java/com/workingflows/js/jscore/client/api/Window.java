@@ -13,24 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.workingflows.js.jscore.client.api;
 
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
+import com.workingflows.js.jscore.client.api.db.IDBEnvironment;
 
 /**
- * Native JS Window 
+ * Native JS Window
  *
  * @author Cristian Rinaldi <a
  * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType(prototype = "Window")
-public interface Window {
-    
-    @JsProperty(value = "console")
+@JsType(prototype = "window")
+public interface Window extends IDBEnvironment{
+
+    @JsProperty
     Console getConsole();
     
+    @JsProperty
+    Document document();
+    
+    /**
+     * Factory for Window creation
+     */
+    public static class Static {
+        public static native Window get() /*-{
+         return $wnd;
+        }-*/;
+    }
+
 }

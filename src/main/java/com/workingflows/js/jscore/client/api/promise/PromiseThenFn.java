@@ -13,8 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
 package com.workingflows.js.jscore.client.api.promise;
 
 import com.google.gwt.core.client.js.JsType;
@@ -25,8 +23,27 @@ import com.google.gwt.core.client.js.JsType;
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-
 @JsType
 public interface PromiseThenFn {
+
     Promise f(Object obj);
+
+    /**
+     * Factory for Promise Function creation
+     */
+    public static class Static {
+
+        /**
+         * Create a native function with GWT Function how parameter.
+         *
+         * @param fn
+         * @return
+         */
+        public static native PromiseThenFn newInstance(PromiseThenFn fn) /*-{
+            return function(changes){
+                var p = fn.f(changes);
+                return p;
+            }
+         }-*/;
+    }
 }

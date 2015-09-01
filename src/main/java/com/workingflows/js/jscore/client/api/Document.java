@@ -15,36 +15,42 @@
  */
 package com.workingflows.js.jscore.client.api;
 
+import com.workingflows.js.jscore.client.api.html.StyleSheetList;
+import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
+import com.workingflows.js.jscore.client.api.core.NodeList;
+import com.workingflows.js.jscore.client.api.html.HTMLBodyElement;
+import com.workingflows.js.jscore.client.api.html.HTMLElement;
 
 /**
- * Native JS Object 
+ * Represent a Document
  *
  * @author Cristian Rinaldi <a
  * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType(prototype = "Object")
-public interface JsObject {
-    
-    /**
-     * Static class for creation and definition
-     */
-    public static class Static {
-        
-        @JsType(prototype = "Object")
-        public interface StaticObject {
-            void observe(Object model, Function fn);
-        }
+@JsType(prototype = "Document")
+public interface Document {
 
-        public static native JsObject newInstance() /*-{
-         return new $wnd.Object();
-         }-*/;
-        
-        public static native StaticObject get() /*-{
-         return new $wnd.Object;
-         }-*/;
-    }
+    public HTMLElement createElement(String div);
+
+    public HTMLElement getElementsByTagName(String body);
+
+    @JsProperty
+    public HTMLBodyElement getBody();
+
+    public NodeList querySelector(String selector);
+
+    public NodeList querySelectorAll(String selector);
     
+    @JsProperty
+    public StyleSheetList styleSheets();
+
+    public static class Static {
+        public static native Document get() /*-{
+            return $doc;
+        }-*/;
+    }
+
 }
