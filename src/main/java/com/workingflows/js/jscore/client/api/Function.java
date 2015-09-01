@@ -15,7 +15,7 @@
  */
 package com.workingflows.js.jscore.client.api;
 
-import com.google.gwt.core.client.js.JsType;
+import com.google.gwt.core.client.js.JsFunction;
 
 /**
  * Represent a Function in JS Enviroment.
@@ -26,7 +26,7 @@ import com.google.gwt.core.client.js.JsType;
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType
+@JsFunction
 public interface Function<T, E> {
     
     E f(T changed );

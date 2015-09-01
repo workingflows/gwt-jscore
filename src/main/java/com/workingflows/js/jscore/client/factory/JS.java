@@ -119,9 +119,7 @@ public class JS {
      */
     public static native PromiseFn Function(PromiseFn fn) /*-{
      return function(resolve, rejected){
-     console.log("Call resolve, rejected");
      fn.f(resolve, rejected);
-     console.log("Post resolve, rejected");
      }
      }-*/;
 
@@ -131,7 +129,7 @@ public class JS {
     /**
      * Interface JsObject Represent a accesor for "static" method in JS
      */
-    @JsType(isNative = true, prototype = "Object")
+    @JsType(prototype = "Object")
     public interface JsObject {
 
         void observe(Object model, Function fn);
@@ -142,7 +140,7 @@ public class JS {
      * Interface StaticPromise Represent a accesor for "static" method in
      * Promise Object
      */
-    @JsType(isNative = true, prototype = "Promise")
+    @JsType(prototype = "Promise")
     public interface StaticPromise {
 
         Promise resolve(Object obj);
@@ -158,7 +156,7 @@ public class JS {
     /**
      * Interface Array
      */
-    @JsType(isNative = true, prototype = "Array")
+    @JsType(prototype = "Array")
     public interface Array extends JsObject {
     }
 }
