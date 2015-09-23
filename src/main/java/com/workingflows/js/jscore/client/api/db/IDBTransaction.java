@@ -5,7 +5,6 @@
  */
 package com.workingflows.js.jscore.client.api.db;
 
-import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.Function;
 import com.workingflows.js.jscore.client.api.core.DOMError;
@@ -16,7 +15,7 @@ import com.workingflows.js.jscore.client.api.core.EventTarget;
  * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
  */
 @JsType
-public interface IDBTransaction extends EventTarget {
+public interface IDBTransaction extends EventTarget{
 
     public static String READ = "read";
     public static String WRITE = "write";

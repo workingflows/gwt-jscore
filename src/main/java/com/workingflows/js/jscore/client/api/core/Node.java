@@ -5,7 +5,6 @@
  */
 package com.workingflows.js.jscore.client.api.core;
 
-import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.JsObject;
 

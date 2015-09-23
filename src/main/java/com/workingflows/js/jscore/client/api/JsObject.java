@@ -27,7 +27,7 @@ import com.google.gwt.core.client.js.JsType;
  */
 @JsType(prototype = "Object")
 public interface JsObject {
-    
+
     /**
      * Static class for creation and definition
      */
