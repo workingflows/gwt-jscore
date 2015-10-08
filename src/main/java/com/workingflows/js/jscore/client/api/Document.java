@@ -18,6 +18,7 @@ package com.workingflows.js.jscore.client.api;
 import com.workingflows.js.jscore.client.api.html.StyleSheetList;
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
+import com.workingflows.js.jscore.client.api.core.Element;
 import com.workingflows.js.jscore.client.api.core.NodeList;
 import com.workingflows.js.jscore.client.api.html.HTMLBodyElement;
 import com.workingflows.js.jscore.client.api.html.HTMLElement;
@@ -30,7 +31,7 @@ import com.workingflows.js.jscore.client.api.html.HTMLElement;
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType(prototype = "Document")
+@JsType
 public interface Document {
 
     public HTMLElement createElement(String div);
@@ -40,7 +41,7 @@ public interface Document {
     @JsProperty
     public HTMLBodyElement getBody();
 
-    public NodeList querySelector(String selector);
+    public Element querySelector(String selector);
 
     public NodeList querySelectorAll(String selector);
     
@@ -49,7 +50,7 @@ public interface Document {
 
     public static class Static {
         public static native Document get() /*-{
-            return $doc;
+            return document;
         }-*/;
     }
 

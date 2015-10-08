@@ -6,6 +6,7 @@ package com.workingflows.js.jscore.client.api.core;
 
 import com.google.gwt.core.client.js.JsProperty;
 import com.google.gwt.core.client.js.JsType;
+import com.workingflows.js.jscore.client.api.Function;
 
 /**
  *
@@ -14,7 +15,9 @@ import com.google.gwt.core.client.js.JsType;
 @JsType(prototype = "Element")
 public interface Element extends Node {
     
-    //@JsProperty
-    DOMTokenList classList();
+    @JsProperty
+    DOMTokenList getClassList();
+    
+    void addEventListener(String event, Function fn);
 
 }

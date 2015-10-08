@@ -27,4 +27,6 @@ public interface Node extends EventTarget {
     Node firstChild();
 
     Node removeChild(Node child);
+    
+    void appendChild(Object child);
 }

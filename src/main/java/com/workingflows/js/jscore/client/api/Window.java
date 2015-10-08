@@ -33,8 +33,8 @@ public interface Window extends IDBEnvironment{
     @JsProperty
     Console getConsole();
     
-    //@JsProperty
-    Document document();
+    @JsProperty
+    Document getDocument();
     
     public static class Static {
         public static native Window get() /*-{
