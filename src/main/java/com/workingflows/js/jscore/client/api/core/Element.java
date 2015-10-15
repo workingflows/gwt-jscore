@@ -19,5 +19,10 @@ public interface Element extends Node {
     DOMTokenList getClassList();
     
     void addEventListener(String event, Function fn);
+    
+    Object querySelector(String selector);
+    
+    @JsProperty
+    void setInnerHTML(String html);
 
 }
