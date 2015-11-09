@@ -15,49 +15,37 @@
  */
 package com.workingflows.js.jscore.client.api.promise;
 
-import com.google.gwt.core.client.js.JsType;
+import jsinterop.annotations.JsMethod;
+import jsinterop.annotations.JsType;
+
+
 
 /**
  * Represent a Native Promise Object.
  *
  *
- * @author Cristian Rinaldi <a
- * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
- * @author Andres Testi <a
- * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
+ * @author Cristian Rinaldi 
+ * <a href="mailto:csrinaldi@gmail.com?Subject=JSCore">csrinaldi@gmail.com</a>
  */
-@JsType(prototype = "Promise")
-public interface Promise {
+@JsType(isNative = true)
+public class Promise {
 
-    Promise then(PromiseThenFn f, PromiseThenFn error);
+    public Promise(PromiseFn fn) {}
+    
+    public Promise() {}
+    
+    public native Promise then(PromiseThen f);
 
-    /**
-     * Factory for Promise creation
-     */
-    public static class Static {
-        /**
-         * Only for now, this will part of Static interface in JsType definition
-         */
-        @JsType(prototype = "Promise")
-        public interface StaticPromise {
+    public native Promise then(PromiseThen f, PromiseThen error);
+    
+    @JsMethod(name = "catch")
+    public native Promise catchException(PromiseThen error);
 
-            Promise resolve(Object obj);
+    public static native Promise resolve(Object obj);
 
-            Promise reject(Object obj);
+    public static native Promise reject(Object obj);
 
-            Promise all(Object... objs);
+    public static native Promise all(Object... objs);
 
-            Promise race(Object... iterable);
-
-        }
-
-        public static native Promise create(PromiseFn onPromise) /*-{
-         return new $wnd.Promise(onPromise);
-         }-*/;
-        
-        public static native StaticPromise get() /*-{
-         return $wnd.Promise;
-         }-*/;
-    }
-
+    public static native Promise race(Object... iterable);
 }

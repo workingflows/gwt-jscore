@@ -30,8 +30,6 @@ public class Console {
     @JsProperty
     public native MemoryInfo getMemory();
 
-    public native void log(Object... obj)/*{
-        
-    }*/;
+    public native void log(Object... obj);
 
 }

@@ -15,31 +15,17 @@
  */
 package com.workingflows.js.jscore.client.api.promise;
 
-import com.google.gwt.core.client.js.JsType;
+import jsinterop.annotations.JsFunction;
 
 /**
  *
  *
- * @author Cristian Rinaldi <a
- * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
- * @author Andres Testi <a
- * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
+ * @author Cristian Rinaldi
+ * <a href="mailto:csrinaldi@gmail.com?Subject=JSCore">csrinaldi@gmail.com</a>
  */
-@JsType
+@FunctionalInterface
+@JsFunction
 public interface PromiseFn {
 
-    void f(Resolve resolve, Rejected rejected);
-
-    /**
-     * Factory for Promise Function creation
-     */
-    public static class Static {
-
-        public static native PromiseFn newInstance(PromiseFn fn) /*-{
-            return function(resolve, rejected){
-                fn.f(resolve, rejected);
-            }
-        }-*/;
-    }
-
+    void call(ResolveFn resolve, RejectedFn rejected);
 }

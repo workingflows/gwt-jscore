@@ -13,27 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.workingflows.js.jscore.client.api.promise;
 
-import com.google.gwt.core.client.JavaScriptObject;
+import jsinterop.annotations.JsFunction;
 
 /**
- * Implemented with {@link JavaScriptObject}.
  *
- * @author Cristian Rinaldi <a
- * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
- * @author Andres Testi <a
- * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
+ *
+ * @author Cristian Rinaldi
+ * <a href="mailto:csrinaldi@gmail.com?Subject=JSCore">csrinaldi@gmail.com</a>
  */
-public final class Rejected extends JavaScriptObject implements RejectedFn{
-
-    protected Rejected() {
-    }
-
-    @Override
-    public final native void rejected(Object objs)/*-{
-     this(objs);
-    }-*/;
-
+@FunctionalInterface
+@JsFunction
+public interface PromiseThen {
+    Promise call(Object obj);
 }
