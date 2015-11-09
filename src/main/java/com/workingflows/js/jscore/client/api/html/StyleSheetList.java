@@ -5,19 +5,19 @@
  */
 package com.workingflows.js.jscore.client.api.html;
 
-import com.google.gwt.core.client.js.JsProperty;
-import com.google.gwt.core.client.js.JsType;
+import jsinterop.annotations.JsType;
 
 /**
- *
- * @author iron
+ * Native StyleSheetList
+ * https://developer.mozilla.org/en-US/docs/Web/API/StyleSheetList
+ * 
+ * @author Cristian Rinaldi
  */
-@JsType(prototype = "StyleSheetList")
-public interface StyleSheetList {
+@JsType(isNative = true)
+public class StyleSheetList {
     
-    StyleSheet item(int idx);
+    public native StyleSheet item(int idx);
     
-    //@JsProperty
-    int length();
+    public native int length();
     
 }

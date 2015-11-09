@@ -15,35 +15,25 @@
  */
 package com.workingflows.js.jscore.client.api;
 
-import com.google.gwt.core.client.js.JsProperty;
-import com.google.gwt.core.client.js.JsType;
+import jsinterop.annotations.JsType;
+
 
 /**
  * Native JS Array
  *
- * @author Cristian Rinaldi <a
- * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
- * @author Andres Testi <a
- * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
+ * @author Cristian Rinaldi 
+ * <a href="mailto:csrinaldi@gmail.com?Subject=JSCore">csrinaldi@gmail.com</a>
  */
-@JsType(prototype = "Array")
-public interface Array {
-
-    void push(Object obj);
-
-    //@JsProperty
-    int length();
-
-    Object pop();
-
-    /**
-     * Factory for Array creation
-     */
-    public static class Static {
-
-        public static native Array newInstance() /*-{
-            return new Array();
-        }-*/;
-    }
-
+@JsType(isNative = true)
+public class Array extends JsObject{
+    
+    //Class Method
+    public static native boolean isArray(Object obj);
+    public static native Array of(Object[] objs);
+    
+    public native int push(int element);
+    public native int push(int element, int element2);
+    public native int push(String element);
+    public native int pop();
+    public native Array filter(Function<Boolean,Object> fn);
 }

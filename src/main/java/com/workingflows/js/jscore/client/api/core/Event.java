@@ -5,17 +5,22 @@
  */
 package com.workingflows.js.jscore.client.api.core;
 
-import com.google.gwt.core.client.js.JsProperty;
-import com.google.gwt.core.client.js.JsType;
+import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
+
+
 
 /**
  *
- * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
- */
-@JsType
-public interface Event<T> {
+ * @author Cristian Rinaldi
+  */
+@JsType(isNative = true)
+public class Event<T> {
+
+    @JsProperty
+    public native T getTarget();
     
-    //@JsProperty
-    T target();
+    @JsProperty
+    public native T getCurrentTarget();
     
 }

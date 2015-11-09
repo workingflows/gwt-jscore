@@ -5,18 +5,21 @@
  */
 package com.workingflows.js.jscore.client.api.db;
 
-import com.google.gwt.core.client.js.JsType;
+import com.workingflows.js.jscore.client.api.JsObject;
+import jsinterop.annotations.JsType;
+
+
 
 /**
  *
- * @author iron
+ * @author Cristian Rinaldi
  */
-@JsType(prototype = "IDBFactory")
-public interface IDBFactory {
+@JsType(isNative = true)
+public class IDBFactory extends JsObject{
 
-    public IDBOpenDBRequest open(String name, int version);
+    public native IDBOpenDBRequest open(String name, int version);
 
-    public IDBOpenDBRequest deleteDatabase(String name);
+    public native IDBOpenDBRequest deleteDatabase(String name);
 
-    public int cmp(Object first, Object second);
+    public native int cmp(Object first, Object second);
 };

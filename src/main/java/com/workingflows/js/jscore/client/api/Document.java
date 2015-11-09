@@ -16,12 +16,12 @@
 package com.workingflows.js.jscore.client.api;
 
 import com.workingflows.js.jscore.client.api.html.StyleSheetList;
-import com.google.gwt.core.client.js.JsProperty;
-import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.core.Element;
 import com.workingflows.js.jscore.client.api.core.NodeList;
 import com.workingflows.js.jscore.client.api.html.HTMLBodyElement;
 import com.workingflows.js.jscore.client.api.html.HTMLElement;
+import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
 
 /**
  * Represent a Document
@@ -31,27 +31,20 @@ import com.workingflows.js.jscore.client.api.html.HTMLElement;
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType
-public interface Document {
+@JsType(isNative = true)
+public class Document {
 
-    public HTMLElement createElement(String div);
+    public native HTMLElement createElement(String element);
 
-    public HTMLElement getElementsByTagName(String body);
+    public native HTMLElement getElementsByTagName(String body);
 
     @JsProperty
-    public HTMLBodyElement getBody();
+    public native HTMLBodyElement getBody();
 
-    public Element querySelector(String selector);
+    public native Element querySelector(String selector);
 
-    public NodeList querySelectorAll(String selector);
+    public native NodeList querySelectorAll(String selector);
     
-    //@JsProperty
-    public StyleSheetList styleSheets();
-
-    public static class Static {
-        public static native Document get() /*-{
-            return document;
-        }-*/;
-    }
-
+    @JsProperty
+    public native StyleSheetList getStyleSheets();
 }

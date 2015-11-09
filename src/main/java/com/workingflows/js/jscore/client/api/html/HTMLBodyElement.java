@@ -5,13 +5,15 @@
  */
 package com.workingflows.js.jscore.client.api.html;
 
-import com.google.gwt.core.client.js.JsType;
+import jsinterop.annotations.JsType;
+
+
 
 /**
  *
  * @author iron
  */
-@JsType(prototype = "HTMLBodyElement")
-public interface HTMLBodyElement extends HTMLElement {
+@JsType(isNative = true)
+public class HTMLBodyElement extends HTMLElement {
 
 }

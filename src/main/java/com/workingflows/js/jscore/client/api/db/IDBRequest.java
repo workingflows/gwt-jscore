@@ -5,51 +5,51 @@
  */
 package com.workingflows.js.jscore.client.api.db;
 
-import com.google.gwt.core.client.js.JsProperty;
-import com.google.gwt.core.client.js.JsType;
+
 import com.workingflows.js.jscore.client.api.Function;
 import com.workingflows.js.jscore.client.api.JsObject;
 import com.workingflows.js.jscore.client.api.core.DOMError;
+import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
 
 /**
  *
  * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
  */
-@JsType(prototype = "IDBRequest")
-public interface IDBRequest<T> {
+@JsType(isNative = true)
+public class IDBRequest<T> {
     
     @JsProperty
-    public void setOnsuccess(Function fn);
+    public native void setOnsuccess(Function fn);
     
     @JsProperty
-    public Function getOnsuccess();
+    public native Function getOnsuccess();
     
     @JsProperty
-    public void setSource(JsObject object);
+    public native void setSource(JsObject object);
     
     @JsProperty
-    public JsObject getSource();
+    public native JsObject getSource();
     
     @JsProperty
-    public DOMError getError();
+    public native DOMError getError();
     
     @JsProperty
-    public void setError(DOMError dom);
+    public native void setError(DOMError dom);
     
     @JsProperty
-    public void setOnerror(Function fn);
+    public native void setOnerror(Function fn);
     
     @JsProperty
-    public Function getOnerror();
+    public native Function getOnerror();
 
-    //TODO see IDBRequestReadyState
-    //@JsProperty
-    public JsObject readyState();
+    @JsProperty
+    public native String getReadyState();
     
-    //@JsProperty
-    public T result();
+    @JsProperty
+    public native T getResult();
     
-    //@JsProperty
-    IDBTransaction transaction();
+    @JsProperty
+    public native  IDBTransaction getTransaction();
     
 }

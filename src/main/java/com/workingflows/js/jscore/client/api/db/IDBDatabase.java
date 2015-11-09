@@ -5,41 +5,43 @@
  */
 package com.workingflows.js.jscore.client.api.db;
 
-import com.google.gwt.core.client.js.JsProperty;
-import com.google.gwt.core.client.js.JsType;
-import com.google.gwt.json.client.JSONObject;
 import com.workingflows.js.jscore.client.api.Function;
+import com.workingflows.js.jscore.client.api.JsObject;
+import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
+
 
 /**
  *
- * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
+ * @author Cristian Rinaldi
+ * 
  */
-@JsType
-public interface IDBDatabase {
+@JsType(isNative = true)
+public class IDBDatabase extends JsObject{
 
-    //@JsProperty
-    String name();
+    @JsProperty
+    public native String getName();
 
-    //@JsProperty
-    long version();
+    @JsProperty
+    public native Long getVersion();
 
-    //@JsProperty
-    String[] objectStoreNames();
+    @JsProperty
+    public native String[] getObjectStoreNames();
 
-    //@JsProperty
-    void onabort(Function f);
+    @JsProperty
+    public native void setOnabort(Function f);
 
-    //@JsProperty
-    void onerror(Function f);
+    @JsProperty
+    public native void setOnerror(Function f);
 
-    //@JsProperty
-    void onversionchange(Function f);
+    @JsProperty
+    public native void setOnversionchange(Function f);
 
-    void close();
+    public native void close();
 
-    IDBObjectStore createObjectStore(String objStore, Object parametes);
+    public native IDBObjectStore createObjectStore(String objStore, Object parametes);
 
-    void deleteObjectStore(String objStore);
+    public native void deleteObjectStore(String objStore);
     
-    IDBTransaction transaction(String[] objStores, String mode);
+    public native IDBTransaction transaction(String[] objStores, String mode);
 }

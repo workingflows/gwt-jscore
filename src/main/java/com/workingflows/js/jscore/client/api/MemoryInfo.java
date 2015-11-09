@@ -15,7 +15,9 @@
  */
 package com.workingflows.js.jscore.client.api;
 
-import com.google.gwt.core.client.js.JsType;
+import jsinterop.annotations.JsType;
+
+
 
 /**
  * Native JS MemoryInfo 
@@ -25,7 +27,7 @@ import com.google.gwt.core.client.js.JsType;
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType(prototype = "MemoryInfo")
-public interface MemoryInfo {
+@JsType(isNative = true)
+public class MemoryInfo {
     
 }

@@ -4,25 +4,28 @@
  */
 package com.workingflows.js.jscore.client.api.core;
 
-import com.google.gwt.core.client.js.JsProperty;
-import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.Function;
+import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
 
 /**
  *
- * @author iron
+ * @author Cristian Rinaldi
  */
-@JsType(prototype = "Element")
-public interface Element extends Node {
+@JsType(isNative = true)
+public class Element extends Node {
     
     @JsProperty
-    DOMTokenList getClassList();
+    public native DOMTokenList getClassList();
     
-    void addEventListener(String event, Function fn);
+    public native void addEventListener(String event, Function fn);
     
-    Object querySelector(String selector);
+    public native Object querySelector(String selector);
     
     @JsProperty
-    void setInnerHTML(String html);
+    public native void setInnerHTML(String html);
+    
+    @JsProperty
+    public native String getInnerHTML();
 
 }

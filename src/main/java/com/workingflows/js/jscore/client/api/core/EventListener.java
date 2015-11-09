@@ -5,28 +5,18 @@
  */
 package com.workingflows.js.jscore.client.api.core;
 
-import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.JsObject;
+import jsinterop.annotations.JsFunction;
 
 /**
  *
- * @author iron
+ * 
+ * 
+ * @author Cristian Rinaldi
+ * @param <E>
  */
-@JsType
+@FunctionalInterface
+@JsFunction
 public interface EventListener<E extends JsObject> {
-
-    void onEvent(E event);
-
-    /**
-     * Factory for EventListener creation
-     */
-    public static class Static {
-
-        public static native EventListener newInstance(EventListener listener)/*-{
-            return function(evt){
-                listener.onEvent(evt);
-            }
-        }-*/;
-    }
-
+    public void onEvent(E event);
 }

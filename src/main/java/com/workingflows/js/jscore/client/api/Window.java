@@ -15,9 +15,9 @@
  */
 package com.workingflows.js.jscore.client.api;
 
-import com.google.gwt.core.client.js.JsProperty;
-import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.db.IDBEnvironment;
+import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
 
 /**
  * Native JS window
@@ -27,19 +27,12 @@ import com.workingflows.js.jscore.client.api.db.IDBEnvironment;
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType(prototype = "window")
-public interface Window extends IDBEnvironment{
+@JsType(isNative = true)
+public class Window extends IDBEnvironment{
 
     @JsProperty
-    Console getConsole();
+    public native Console getConsole();
     
     @JsProperty
-    Document getDocument();
-    
-    public static class Static {
-        public static native Window get() /*-{
-         return $wnd;
-        }-*/;
-    }
-
+    public native Document getDocument();
 }

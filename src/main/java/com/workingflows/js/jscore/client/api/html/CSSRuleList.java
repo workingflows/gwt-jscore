@@ -13,17 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.workingflows.js.jscore.client.api.core;
+package com.workingflows.js.jscore.client.api.html;
 
-import com.workingflows.js.jscore.client.api.JsObject;
 import jsinterop.annotations.JsType;
 
+
 /**
- * Represent a EventTarget Element
+ * Native CSSRuleList
+ * https://developer.mozilla.org/en-US/docs/Web/API/CSSRuleList
  * 
  * @author Cristian Rinaldi
  */
 @JsType(isNative = true)
-public class EventTarget extends JsObject {
-
+public class CSSRuleList{
+    
+    public native CSSRule item(int idx);
+    
+    public native int length();
+    
 }

@@ -5,14 +5,14 @@
  */
 package com.workingflows.js.jscore.client.api.db;
 
-import com.google.gwt.core.client.js.JsType;
+import jsinterop.annotations.JsType;
 
 /**
  *
- * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
+ * @author Cristian Rinaldi
  */
 
-@JsType
-public interface IDBTransactionMode {
+@JsType(isNative = true)
+public class IDBTransactionMode {
     
 }

@@ -3,12 +3,5 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.workingflows.js.jscore.client.api.db;
-
-/**
- *
- * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
- */
-public class IDBRequestReadyState {
-    
-}
+@jsinterop.annotations.JsPackage(namespace = jsinterop.annotations.JsPackage.GLOBAL)
+package com.workingflows.js.jscore.client.api;

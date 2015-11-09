@@ -5,18 +5,20 @@
  */
 package com.workingflows.js.jscore.client.api.db;
 
-import com.google.gwt.core.client.js.JsType;
+
 import com.workingflows.js.jscore.client.api.Function;
+import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
 
 /**
  *
  * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
  * @param <T>
  */
-@JsType(prototype = "IDBOpenDBRequest")
-public interface IDBOpenDBRequest extends IDBRequest<IDBDatabase>{
+@JsType(isNative = true)
+public class IDBOpenDBRequest extends IDBRequest<IDBDatabase>{
 
-    //@JsProperty
-    void onupgradeneeded(Function<IDBVersionChangeEvent<IDBOpenDBRequest>, Void> fn);
+    @JsProperty
+    public native void setOnupgradeneeded(Function<IDBVersionChangeEvent<IDBOpenDBRequest>, Void> fn);
     
 }

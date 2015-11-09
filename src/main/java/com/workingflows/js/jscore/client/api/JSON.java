@@ -15,7 +15,7 @@
  */
 package com.workingflows.js.jscore.client.api;
 
-import com.google.gwt.core.client.js.JsType;
+import jsinterop.annotations.JsType;
 
 /**
  * Native JSON Object
@@ -25,23 +25,8 @@ import com.google.gwt.core.client.js.JsType;
  * @author Andres Testi <a
  * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
  */
-@JsType(prototype = "JSON")
-public interface JSON {
+@JsType(isNative = true)
+public class JSON {
 
-    /**
-     * Static class for creation and definition
-     */
-    public static class Static {
-
-        @JsType(prototype = "JSON")
-        public interface Static_JSON {
-
-            String stringify(JsObject obj);
-        }
-
-        public static native JSON staticObject() /*-{
-         return  $wnd.JSON;
-         }-*/;
-    }
-
+    public static native String stringify(JsObject obj);
 }

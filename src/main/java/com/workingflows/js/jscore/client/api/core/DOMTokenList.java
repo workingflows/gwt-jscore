@@ -5,8 +5,8 @@
  */
 package com.workingflows.js.jscore.client.api.core;
 
-import com.google.gwt.core.client.js.JsType;
-import com.workingflows.js.jscore.client.api.JsObject;
+import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
 
 /**
  * Documentación de {@link DOMTokenList}.
@@ -15,8 +15,18 @@ import com.workingflows.js.jscore.client.api.JsObject;
  *
  * @author Cristian Rinaldi <csrinaldi@gmail.com>
  */
-@JsType(prototype = "DOMTokenList")
-public interface DOMTokenList {
+@JsType(isNative = true)
+public class DOMTokenList {
+
+    /**
+     * This interface doesn't inherit any property.
+     *
+     * DOMTokenList.length Read only Is an integer representing the number of
+     * objects stored in the object.
+     * @return 
+     */
+    @JsProperty
+    public native int getLenth();
 
     /**
      * Returns an item in the list by its index (or undefined if the number is
@@ -26,7 +36,7 @@ public interface DOMTokenList {
      * @param index
      * @return
      */
-    String item(int index);
+    public native String item(int index);
 
     /**
      * Returns true if the underlying string contains token, otherwise false
@@ -34,27 +44,29 @@ public interface DOMTokenList {
      * @param obj
      * @return
      */
-    Boolean contains(String obj);
+    public native Boolean contains(String obj);
 
     /**
      * Adds token to the underlying string
      *
      * @param obj
      */
-    void add(String obj);
+    public native void add(String obj);
 
     /**
      * Removes token from the underlying string
+     *
      * @param obj
      */
-    void remove(String obj);
+    public native void remove(String obj);
 
     /**
-     * Removes token from string and returns false. If token doesn't exist it's added and the function returns true
+     * Removes token from string and returns false. If token doesn't exist it's
+     * added and the function returns true
+     *
      * @param obj
-     * @return 
+     * @return
      */
-    Boolean toggle (String obj);
-
+    public native Boolean toggle(String obj);
 
 }

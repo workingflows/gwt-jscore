@@ -5,41 +5,44 @@
  */
 package com.workingflows.js.jscore.client.api.db;
 
-import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.Function;
 import com.workingflows.js.jscore.client.api.core.DOMError;
 import com.workingflows.js.jscore.client.api.core.EventTarget;
+import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
 
 /**
  *
  * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
  */
-@JsType
-public interface IDBTransaction extends EventTarget{
+@JsType(isNative = true)
+public class IDBTransaction extends EventTarget{
 
-    public static String READ = "read";
-    public static String WRITE = "write";
-    public static String READWRITE = "readwrite";
+    @JsProperty
+    public native IDBDatabase getBb();
+
+    @JsProperty
+    public native DOMError getError();
+
+    @JsProperty
+    public native IDBTransactionMode getMode();
     
-    //@JsProperty
-    IDBDatabase db();
+    @JsProperty
+    public native void setMode(IDBTransactionMode mode);
 
-    //@JsProperty
-    DOMError error();
+    @JsProperty
+    public native void setOnabort(Function fn);
 
-    //@JsProperty
-    IDBTransactionMode mode();
-
-    //@JsProperty
-    void onabort(Function fn);
-
-    //@JsProperty
-    void oncomplete(Function fn);
-
-    //@JsProperty
-    void onerror(Function fn);
+    @JsProperty
+    public native void setOncomplete(Function fn);
     
-    void abort();
+    @JsProperty
+    public native String[] getObjectStoreNames();
 
-    IDBObjectStore objectStore(String name);
+    @JsProperty
+    public native void setOnerror(Function fn);
+
+    public native void abort();
+
+    public native IDBObjectStore objectStore(String name);
 }

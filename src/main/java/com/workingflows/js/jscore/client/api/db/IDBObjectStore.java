@@ -5,26 +5,26 @@
  */
 package com.workingflows.js.jscore.client.api.db;
 
-import com.google.gwt.core.client.js.JsProperty;
-import com.google.gwt.core.client.js.JsType;
-import com.google.gwt.json.client.JSONObject;
+import com.workingflows.js.jscore.client.api.JsObject;
+import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
 
 /**
  *
  * @author Cristian Rinaldi <crinaldi@santafe.gov.ar>
  */
-@JsType
-public interface IDBObjectStore {
+@JsType(isNative = true)
+public class IDBObjectStore {
     
-    Object createIndex(String name, String path, JSONObject options);
+    public native Object createIndex(String name, String path, JsObject options);
     
-    IDBRequest add(JSONObject obj, String id);
+    public native IDBRequest add(JsObject obj, String id);
     
-    IDBRequest put(JSONObject obj, String id);
+    public native IDBRequest put(JsObject obj, String id);
     
-    IDBRequest get(String id);
+    public native IDBRequest get(String id);
     
-    //@JsProperty
-    String keyPath();
+    @JsProperty
+    public native String getKeyPath();
     
 }

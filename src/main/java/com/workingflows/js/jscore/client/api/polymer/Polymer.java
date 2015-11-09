@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.workingflows.js.jscore.client.api;
+package com.workingflows.js.jscore.client.api.polymer;
 
-import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.core.Element;
+import jsinterop.annotations.JsType;
 
 /**
  * Documentación de {@link $name}
@@ -16,10 +16,10 @@ import com.workingflows.js.jscore.client.api.core.Element;
  *
  * @author Cristian Rinaldi - csrinaldi@gmail.com
  */
-@JsType
-public interface Polymer {
+@JsType(isNative = true)
+public class Polymer {
 
-    Element dom(Element e);
+    public native Element dom(Element e);
     
     public static class Static {
         public static native Polymer get() /*-{

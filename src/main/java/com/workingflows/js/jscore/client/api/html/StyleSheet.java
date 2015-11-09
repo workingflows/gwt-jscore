@@ -1,42 +1,51 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright 2015 Cristian Rinaldi.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.workingflows.js.jscore.client.api.html;
 
-import com.google.gwt.core.client.js.JsProperty;
-import com.google.gwt.core.client.js.JsType;
 import com.workingflows.js.jscore.client.api.core.Node;
+import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
 
 /**
- *
- * @author iron
+ * Native StyleSheet
+ * https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet
+ * 
+ * @author Cristian Rinaldi
  */
-@JsType(prototype = "StyleSheet")
-public interface StyleSheet {
+@JsType(isNative = true)
+public class StyleSheet {
     
     @JsProperty
-    boolean isDisabled();
+    public native boolean getDisabled();
     
     @JsProperty
-    void setDisabled(boolean disabled);
-    
-    //TODO media
-    //@JsProperty
-    Node ownerNode();
-    
-    //@JsProperty
-    StyleSheet parentStyleSheet();
+    public native void setDisabled(boolean disabled);
     
     @JsProperty
-    String getTitle();
+    public native Node getOwnerNode();
+    
+    @JsProperty
+    public native StyleSheet getParentStyleSheet();
+    
+    @JsProperty
+    public native String getTitle();
 
     @JsProperty
-    String getType();
+    public native String getType();
     
     @JsProperty
-    String getHref();
-    
-    
+    public native String getHref();
 }

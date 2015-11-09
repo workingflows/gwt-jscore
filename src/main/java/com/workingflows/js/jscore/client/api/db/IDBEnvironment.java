@@ -5,17 +5,18 @@
  */
 package com.workingflows.js.jscore.client.api.db;
 
-import com.google.gwt.core.client.js.JsProperty;
-import com.google.gwt.core.client.js.JsType;
+import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
+
 
 /**
  *
  * @author Cristian Rinaldi <csrinaldi@gmail.com>
  */
-@JsType
-public interface IDBEnvironment {
+@JsType(isNative = true)
+public class IDBEnvironment {
     
     @JsProperty
-    IDBFactory getIndexedDB();
+    public native IDBFactory getIndexedDB();
     
 }

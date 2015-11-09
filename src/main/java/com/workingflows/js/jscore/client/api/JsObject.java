@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Cristian Rinaldi & Andres Testi.
+ * Copyright 2015 Cristian Rinaldi.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,36 +15,25 @@
  */
 package com.workingflows.js.jscore.client.api;
 
-import com.google.gwt.core.client.js.JsType;
+
 
 /**
  * Native JS Object 
  *
- * @author Cristian Rinaldi <a
- * href="mailto:csrinaldi@gmail.com?Subject=JQuery">csrinaldi@gmail.com</a>
- * @author Andres Testi <a
- * href="mailto:andres.a.testi@gmail.com?Subject=JQuery">andres.a.testi@gmail.com</a>
+ * @author Cristian Rinaldi <a href="mailto:csrinaldi@gmail.com?Subject=JsCore">csrinaldi@gmail.com</a>
  */
-@JsType(prototype = "Object")
-public interface JsObject {
+import jsinterop.annotations.JsMethod;
+import jsinterop.annotations.JsPackage;
+import jsinterop.annotations.JsType;
 
-    /**
-     * Static class for creation and definition
-     */
-    public static class Static {
-        
-        @JsType(prototype = "Object")
-        public interface StaticObject {
-            void observe(Object model, Function fn);
-        }
+@JsType(isNative = true, name = "Object", namespace = JsPackage.GLOBAL)
+public class JsObject {
 
-        public static native JsObject newInstance() /*-{
-         return new $wnd.Object();
-         }-*/;
-        
-        public static native StaticObject get() /*-{
-         return new $wnd.Object;
-         }-*/;
-    }
+    @JsMethod
+    public static native <T extends JsObject> void observe(T model, Function<Changed<T>, Void> fn);
+    
+    public static native String[] getOwnPropertyNames(Object object);
+    
+    public native boolean hasOwnProperty(String name);
     
 }
