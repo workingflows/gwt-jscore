@@ -30,7 +30,7 @@ import jsinterop.annotations.JsType;
 public class JsObject {
 
     @JsMethod
-    public static native <T extends JsObject> void observe(T model, Function<Changed<T>, Void> fn);
+    public static native <T extends JsObject> void observe(T model, Function<Changed<T>[], Void> fn);
     
     public static native String[] getOwnPropertyNames(Object object);
     
