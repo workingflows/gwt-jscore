@@ -16,7 +16,7 @@
     </properties>
 
     <dependencyManagement>
-        <!--dependencies>
+        <dependencies>
             <dependency>
                 <groupId>com.google.gwt</groupId>
                 <artifactId>gwt</artifactId>
@@ -24,7 +24,7 @@
                 <scope>import</scope>
                 <version>${gwt.version}</version>
             </dependency>
-        </dependencies-->
+        </dependencies>
     </dependencyManagement>
 
     <dependencies>
