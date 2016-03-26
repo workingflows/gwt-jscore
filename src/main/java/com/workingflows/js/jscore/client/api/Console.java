@@ -15,7 +15,7 @@
  */
 package com.workingflows.js.jscore.client.api;
 
-import com.google.gwt.core.client.js.JsProperty;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 /**
