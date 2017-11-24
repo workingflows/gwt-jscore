@@ -1,3 +1,5 @@
+The repository has moved to https://github.com/logikas/gwt-jscore
+
 gwt-jscore
 ==========
 
