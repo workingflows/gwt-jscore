@@ -19,9 +19,9 @@ import jsinterop.annotations.JsType;
 public class IDBVersionChangeEvent<T extends IDBOpenDBRequest> extends Event<T>{
     
     @JsProperty
-    public native long getOldVersion();
+    public native int getOldVersion();
     
     @JsProperty
-    public native long getNewVersion();
+    public native int getNewVersion();
     
 }
